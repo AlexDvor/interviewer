@@ -1,0 +1,43 @@
+
+
+
+<main class="lesson">
+  <header class="lesson-header">
+    <a class="brand" href="/" aria-label="Angular Practice — головна">A<span>Angular Practice</span></a>
+    <span class="lesson-number">УРОК 01 / COMPONENT INPUTS</span>
+  </header>
+
+  <section class="intro" aria-labelledby="lesson-title">
+    <p class="eyebrow">ВІД БАТЬКА ДО ДИТИНИ</p>
+    <h1 id="lesson-title">Один товар.<br>Два компоненти.</h1>
+    <p class="description">Батьківський компонент зберігає дані, а дочірній показує їх у картці. Навчись передавати ці дані через input.</p>
+  </section>
+
+  <section class="workspace" aria-label="Макет для практики">
+    <article class="parent-panel">
+      <div class="panel-heading"><span class="tag">PARENT</span><span class="filename">input-lesson.ts / .html</span></div>
+      <h2>Джерело даних</h2>
+      <p class="panel-description">Тут ти створиш властивості товару.</p>
+      <dl class="data-list">
+        <div><dt>Назва · name</dt><dd>Studio Headphones</dd></div>
+        <div><dt>Ціна · price</dt><dd>4 200 ₴</dd></div>
+        <div><dt>Категорія · category</dt><dd>Аудіо</dd></div>
+      </dl>
+      <p class="note">Поки це статична розмітка. Наступний крок — перенести значення у клас InputLesson.</p>
+    </article>
+
+    <div class="connection" aria-hidden="true"><span>input()</span><span class="arrow">→</span></div>
+
+    <section class="child-panel" aria-label="Дочірній компонент">
+      <div class="panel-heading"><span class="tag child-tag">CHILD</span><span class="filename">product-card</span></div>
+      <!-- Практика: додай сюди прив’язки до inputs дочірнього компонента. -->
+      <app-product-card [name]='productName' [price]="productPrice" [category]="productCategory"/>
+    </section>
+  </section>
+
+  <aside class="practice" aria-labelledby="practice-title">
+    <span class="step-number">01</span>
+    <div><h2 id="practice-title">Твоя практика</h2><p>Створи дані в InputLesson → оголоси inputs у ProductCard → передай значення → покажи їх у картці.</p></div>
+    <span class="status">Макет готовий · логіка за тобою</span>
+  </aside>
+</main>
