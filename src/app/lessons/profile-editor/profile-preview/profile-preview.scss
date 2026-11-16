@@ -1,0 +1,20 @@
+:host { display: block; }
+.profile-card { background: #fff; border: 1px solid #e1dcec; border-radius: 18px; overflow: hidden; box-shadow: 0 12px 32px #34254d08; }
+.cover { height: 115px; background: #635bce; position: relative; overflow: hidden; }
+.cover > span { position: absolute; top: 20px; left: 24px; color: #fff; opacity: .8; font-size: 9px; letter-spacing: 2px; }
+.orbit { position: absolute; width: 180px; height: 180px; border: 1px solid #ffffff30; border-radius: 50%; right: -15px; top: -70px; }
+.orbit-two { width: 260px; height: 260px; right: -55px; top: -110px; }
+.profile-body { position: relative; padding: 50px 26px 26px; }
+.avatar { position: absolute; top: -36px; left: 26px; width: 72px; height: 72px; border: 5px solid white; border-radius: 22px; display: grid; place-items: center; background: #e9e4fb; color: #635b91; font-size: 22px; font-weight: 600; }
+.availability { display: inline-flex; align-items: center; gap: 6px; font-size: 10px; border-radius: 20px; padding: 6px 9px; margin: 0 0 16px; }
+.available { background: #eaf5ed; color: #3f7751; }
+.unavailable { background: #f0edf3; color: #81738b; }
+.status-dot { background: currentColor; width: 5px; height: 5px; border-radius: 50%; }
+.profile-name { color: #29243c; font-size: 28px; line-height: 1.2; overflow-wrap: anywhere; margin: 0 0 8px; font-weight: 600; letter-spacing: -1px; }
+.profile-role { color: #76688b; font-size: 13px; margin: 0; }
+.profile-bio { color: #81778b; font-size: 13px; line-height: 1.8; margin: 20px 0; overflow-wrap: anywhere; white-space: pre-wrap; }
+.projected-note { background: #f8f6fc; border-left: 2px solid #d3c9e7; padding: 12px; margin: 0 0 22px; color: #8a7b9d; font-size: 12px; line-height: 1.7; }
+.projected-note p { margin: 0; }
+.contact-button { display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 13px 16px; border: 0; border-radius: 9px; background: #635bce; color: #fff; font-size: 13px; cursor: pointer; }
+.contact-button:disabled { opacity: .45; cursor: not-allowed; }
+.contact-button:focus-visible { outline: 2px solid #29243c; outline-offset: 3px; }

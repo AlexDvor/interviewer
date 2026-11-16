@@ -1,0 +1,47 @@
+<main class="studio">
+  <header class="topbar">
+    <a routerLink="/" class="back">← Урок 01</a>
+    <span class="wordmark">PROFILE<span>/</span>STUDIO</span>
+    <span class="lesson-label">ПРАКТИКА 02</span>
+  </header>
+
+  <section class="intro" aria-labelledby="page-title">
+    <p class="eyebrow">ТВОЇ ДАНІ. ТВОЄ ПРЕДСТАВЛЕННЯ.</p>
+    <h1 id="page-title">Профіль, який<br>реагує на зміни.</h1>
+    <p>Редагуй дані зліва та спостерігай за карткою справа — після того, як сам підключиш логіку.</p>
+  </section>
+
+  <div class="workspace">
+    <section class="editor panel" aria-labelledby="editor-title">
+      <div class="panel-top"><span class="pill">PARENT · ProfileLesson</span><span>01 / РЕДАКТОР</span></div>
+      <h2 id="editor-title">Налаштування профілю</h2>
+      <p class="muted">Усі поля зараз статичні. Зв’яжи їх із даними компонента.</p>
+      <!-- Практика: створи властивості та підключи ngModel. -->
+      <div class="fields">
+        <label for="display-name">Ім’я<input id="display-name" name="displayName" type="text" value="Олексій Мельник" /></label>
+        <label for="profile-role">Спеціальність<input id="profile-role" name="role" type="text" value="Frontend Developer" /></label>
+        <label for="profile-bio">Про себе<textarea id="profile-bio" name="bio" rows="3">Вивчаю Angular і створюю свій перший інтерактивний профіль.</textarea></label>
+        <div class="field-row">
+          <label for="accent-color">Колір акценту<input id="accent-color" name="accentColor" type="color" value="#635bce" /></label>
+          <label for="name-size">Розмір імені<input id="name-size" name="nameSize" type="range" min="20" max="36" value="28" /></label>
+        </div>
+        <label class="checkbox-label" for="availability"><input id="availability" name="isAvailable" type="checkbox" checked /> Відкритий до пропозицій</label>
+      </div>
+      <button class="reset-button" type="button">Скинути зміни ↺</button>
+    </section>
+
+    <section class="preview-panel" aria-labelledby="preview-title">
+      <div class="preview-heading"><h2 id="preview-title">Твоя картка</h2><span class="pill">CHILD · ProfilePreview</span></div>
+      <!-- Практика: передай inputs і підпишись на output contactRequested. -->
+      <app-profile-preview />
+      <p class="preview-caption">ПРЕВ’Ю · ПЕРЕДАЧУ ДАНИХ ПІДКЛЮЧАЄШ ТИ</p>
+      <div class="notification" role="status"><span class="notification-icon">↗</span><div><strong>Остання дія</strong><p>Запитів на контакт ще немає.</p></div></div>
+    </section>
+  </div>
+
+  <aside class="exercise-summary">
+    <span class="exercise-number">02</span>
+    <div><h2>План практики</h2><p>Дані → ngModel → inputs → стилі → події → output. Додатково: ng-content та lifecycle hooks.</p></div>
+    <span class="static-label">СТАТИЧНИЙ МАКЕТ</span>
+  </aside>
+</main>

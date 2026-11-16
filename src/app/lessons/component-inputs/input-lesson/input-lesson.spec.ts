@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideRouter } from '@angular/router';
 import { InputLesson } from './input-lesson';
 
 describe('InputLesson', () => {
@@ -8,6 +9,7 @@ describe('InputLesson', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [InputLesson],
+      providers: [provideRouter([])],
     }).compileComponents();
 
     fixture = TestBed.createComponent(InputLesson);
