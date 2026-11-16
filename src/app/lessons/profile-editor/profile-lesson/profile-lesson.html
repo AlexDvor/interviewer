@@ -18,30 +18,45 @@
       <p class="muted">Усі поля зараз статичні. Зв’яжи їх із даними компонента.</p>
       <!-- Практика: створи властивості та підключи ngModel. -->
       <div class="fields">
-        <label for="display-name">Ім’я<input id="display-name" name="displayName" type="text" value="Олексій Мельник" /></label>
-        <label for="profile-role">Спеціальність<input id="profile-role" name="role" type="text" value="Frontend Developer" /></label>
-        <label for="profile-bio">Про себе<textarea id="profile-bio" name="bio" rows="3">Вивчаю Angular і створюю свій перший інтерактивний профіль.</textarea></label>
+        <label for="display-name">Ім’я<input id="display-name" name="displayName" [(ngModel)]="displayName"
+            type="text" /></label>
+        <label for="profile-role">Спеціальність<input id="profile-role" name="role" [(ngModel)]="role" type="text" /></label>
+        <label for="profile-bio">Про себе<textarea id="profile-bio" name="bio" [(ngModel)]="bio"
+            rows="3"></textarea></label>
         <div class="field-row">
-          <label for="accent-color">Колір акценту<input id="accent-color" name="accentColor" type="color" value="#635bce" /></label>
-          <label for="name-size">Розмір імені<input id="name-size" name="nameSize" type="range" min="20" max="36" value="28" /></label>
+          <label for="accent-color">Колір акценту<input id="accent-color" name="accentColor" [(ngModel)]="accentColor"
+              type="color" /></label>
+          <label for="name-size">Розмір імені<input id="name-size" name="nameSize" [(ngModel)]="nameSize" type="range" min="20"
+              max="36" /></label>
         </div>
-        <label class="checkbox-label" for="availability"><input id="availability" name="isAvailable" type="checkbox" checked /> Відкритий до пропозицій</label>
+        <label class="checkbox-label" for="availability"><input id="availability" name="isAvailable" [(ngModel)]="isAvailable"
+            type="checkbox" /> Відкритий до пропозицій</label>
       </div>
-      <button class="reset-button" type="button">Скинути зміни ↺</button>
+      <button class="reset-button" type="button" (click)="resetProfile()">Скинути зміни ↺</button>
     </section>
 
     <section class="preview-panel" aria-labelledby="preview-title">
-      <div class="preview-heading"><h2 id="preview-title">Твоя картка</h2><span class="pill">CHILD · ProfilePreview</span></div>
+      <div class="preview-heading">
+        <h2 id="preview-title">Твоя картка</h2><span class="pill">CHILD · ProfilePreview</span>
+      </div>
       <!-- Практика: передай inputs і підпишись на output contactRequested. -->
-      <app-profile-preview />
+      <app-profile-preview [displayName]="displayName" [role]="role" [bio]="bio" [accentColor]="accentColor"
+        [nameSize]="nameSize" [isAvailable]="isAvailable" (contactRequested)="handleContactRequest($event)" />
       <p class="preview-caption">ПРЕВ’Ю · ПЕРЕДАЧУ ДАНИХ ПІДКЛЮЧАЄШ ТИ</p>
-      <div class="notification" role="status"><span class="notification-icon">↗</span><div><strong>Остання дія</strong><p>Запитів на контакт ще немає.</p></div></div>
+      <div class="notification" role="status"><span class="notification-icon">↗</span>
+        <div><strong>Остання дія</strong>
+          <p>{{lastContactMessage}}</p>
+        </div>
+      </div>
     </section>
   </div>
 
   <aside class="exercise-summary">
     <span class="exercise-number">02</span>
-    <div><h2>План практики</h2><p>Дані → ngModel → inputs → стилі → події → output. Додатково: ng-content та lifecycle hooks.</p></div>
+    <div>
+      <h2>План практики</h2>
+      <p>Дані → ngModel → inputs → стилі → події → output. Додатково: ng-content та lifecycle hooks.</p>
+    </div>
     <span class="static-label">СТАТИЧНИЙ МАКЕТ</span>
   </aside>
 </main>

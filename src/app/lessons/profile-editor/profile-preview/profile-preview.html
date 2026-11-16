@@ -1,16 +1,17 @@
 <article class="profile-card">
   <!-- Практика: підключи style binding до accentColor. -->
-  <div class="cover"><span>CREATIVE PEOPLE / 002</span><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div></div>
+  <div class="cover" [style.background-color]="accentColor"><span>CREATIVE PEOPLE / 002</span><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div></div>
   <div class="profile-body">
     <div class="avatar" aria-hidden="true">ОМ</div>
     <!-- Практика: керуй класами available та unavailable через isAvailable. -->
-    <p class="availability available"><span class="status-dot"></span>Відкритий до пропозицій</p>
-    <h3 class="profile-name">Олексій Мельник</h3>
-    <p class="profile-role">Frontend Developer</p>
-    <p class="profile-bio">Вивчаю Angular і створюю свій перший інтерактивний профіль.</p>
+    <p class="availability" [class.available]="isAvailable"
+  [class.unavailable]="!isAvailable" ><span class="status-dot"></span>{{isAvailable ? "Відкритий до пропозиції" : "Зараз недоступний" }}</p>
+    <h3 class="profile-name " [style.font-size.px]='nameSize'>{{displayName}}</h3>
+    <p class="profile-role">{{role}}</p>
+    <p class="profile-bio">{{bio}}</p>
     <!-- Додатково: перенеси цей текст до батька, а тут додай ng-content. -->
     <div class="projected-note"><p>Мій фокус — доступні та зручні інтерфейси.</p></div>
     <!-- Практика: click → output → батьківський обробник. -->
-    <button class="contact-button" type="button">Зв’язатися <span aria-hidden="true">↗</span></button>
+    <button class="contact-button" type="button" (click)="requestContact()"  [disabled]="!isAvailable || displayName.trim().length === 0">Зв’язатися <span aria-hidden="true">↗</span></button>
   </div>
 </article>
