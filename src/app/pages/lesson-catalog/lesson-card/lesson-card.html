@@ -1,0 +1,34 @@
+<a
+  class="lesson-card"
+  [class.violet]="lesson().theme === 'violet'"
+  [routerLink]="['/lessons', lesson().path]"
+>
+  <div class="card-art" aria-hidden="true">
+    <span class="lesson-index">ПРАКТИКА / {{ lesson().number }}</span>
+    @if (lesson().theme === 'sage') {
+      <div class="mini-component"><span class="mini-icon">P</span><span>Parent</span></div>
+      <span class="mini-arrow">→</span>
+      <div class="mini-component mini-child">
+        <span class="mini-icon">C</span><span>Child</span>
+      </div>
+    } @else {
+      <div class="mini-editor"><span></span><span></span><span></span></div>
+      <span class="mini-arrow">→</span>
+      <div class="mini-profile">
+        <span class="mini-avatar"></span><span class="mini-name"></span
+        ><span class="mini-button"></span>
+      </div>
+    }
+  </div>
+  <div class="card-body">
+    <div class="card-kicker">ЗАВДАННЯ {{ lesson().number }}<span>ANGULAR BASICS</span></div>
+    <h3>{{ lesson().title }}</h3>
+    <p>{{ lesson().description }}</p>
+    <ul class="topics" aria-label="Теми завдання">
+      @for (topic of lesson().topics; track topic) {
+        <li>{{ topic }}</li>
+      }
+    </ul>
+    <div class="card-action">Відкрити завдання <span aria-hidden="true">↗</span></div>
+  </div>
+</a>

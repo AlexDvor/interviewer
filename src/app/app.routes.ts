@@ -1,8 +1,22 @@
 import { Routes } from '@angular/router';
-import { InputLesson } from './lessons/component-inputs/input-lesson/input-lesson';
-import { ProfileLesson } from './lessons/profile-editor/profile-lesson/profile-lesson';
+import { LessonCatalog } from './pages/lesson-catalog/lesson-catalog';
+import { LESSONS } from './lessons/lesson-registry';
 
 export const routes: Routes = [
-  { path: '', component: InputLesson, title: 'Передача даних · Angular Practice' },
-  { path: 'profile-lab', component: ProfileLesson, title: 'Редактор профілю · Angular Practice' },
+  {
+    path: '',
+    pathMatch: 'full',
+    component: LessonCatalog,
+    title: 'Каталог завдань · Angular Practice',
+  },
+  {
+    path: 'lessons',
+    children: LESSONS.map((lesson) => ({
+      path: lesson.path,
+      title: `${lesson.title} · Angular Practice`,
+      loadComponent: lesson.loadComponent,
+    })),
+  },
+  { path: 'profile-lab', redirectTo: 'lessons/profile-editor', pathMatch: 'full' },
+  { path: '**', redirectTo: '' },
 ];

@@ -1,0 +1,199 @@
+:host {
+  display: block;
+  min-width: 0;
+}
+a {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+a:focus-visible {
+  outline: 3px solid #b64d36;
+  outline-offset: 5px;
+}
+h3,
+p {
+  margin: 0;
+}
+.lesson-card {
+  border: 1px solid #dedfd5;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fff;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+.lesson-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px #29372b0a;
+}
+.card-art {
+  height: 172px;
+  background: #e6ecd9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  position: relative;
+}
+.lesson-index {
+  position: absolute;
+  top: 18px;
+  left: 20px;
+  font-size: 8px;
+  letter-spacing: 1.7px;
+  color: #6d7b5b;
+}
+.mini-component {
+  background: #f9fbf3;
+  padding: 16px;
+  border: 1px solid #cfdac1;
+  border-radius: 9px;
+  display: grid;
+  gap: 8px;
+  text-align: center;
+  font:
+    10px Consolas,
+    monospace;
+  width: 86px;
+  transform: rotate(-4deg);
+}
+.mini-child {
+  transform: rotate(4deg);
+}
+.mini-icon {
+  font-size: 23px;
+  font-weight: 600;
+  color: #677f53;
+}
+.mini-arrow {
+  color: #7c9068;
+  font-size: 24px;
+}
+.violet .card-art {
+  background: #eae5f3;
+}
+.violet .lesson-index {
+  color: #857495;
+}
+.mini-editor {
+  width: 105px;
+  background: #fcfaff;
+  padding: 18px 13px;
+  display: grid;
+  gap: 9px;
+  border: 1px solid #d8cee8;
+  border-radius: 8px;
+  transform: rotate(-5deg);
+}
+.mini-editor span {
+  height: 9px;
+  background: #ebe5f3;
+  border-radius: 3px;
+}
+.mini-editor span:last-child {
+  width: 65%;
+}
+.mini-profile {
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  background: #fcfaff;
+  border: 1px solid #d8cee8;
+  border-radius: 8px;
+  width: 85px;
+  padding: 14px;
+  transform: rotate(5deg);
+}
+.mini-avatar {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #c2b2dd;
+}
+.mini-name {
+  width: 45px;
+  height: 5px;
+  background: #ddd3eb;
+}
+.mini-button {
+  width: 46px;
+  height: 10px;
+  background: #9780b9;
+  border-radius: 2px;
+}
+.violet .mini-arrow {
+  color: #a28eb6;
+}
+.card-body {
+  padding: 24px;
+}
+.card-kicker {
+  display: flex;
+  justify-content: space-between;
+  font-size: 8px;
+  letter-spacing: 1px;
+  color: #848b77;
+}
+.card-kicker span {
+  color: #9da18f;
+}
+h3 {
+  font-size: 21px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  margin-top: 15px;
+}
+.card-body > p {
+  font-size: 13px;
+  line-height: 1.8;
+  color: #808477;
+  margin-top: 10px;
+  min-height: 47px;
+}
+.topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 24px;
+}
+.topics li {
+  font:
+    10px Consolas,
+    monospace;
+  background: #f3f5ed;
+  padding: 6px 8px;
+  border-radius: 4px;
+  color: #778167;
+}
+.violet .topics li {
+  background: #f4f0f9;
+  color: #8a799d;
+}
+.card-action {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #edeee7;
+  padding-top: 18px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.card-action span {
+  font-size: 17px;
+}
+@media (max-width: 1100px) {
+  .card-kicker span {
+    display: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lesson-card {
+    transition: none;
+  }
+  .lesson-card:hover {
+    transform: none;
+  }
+}

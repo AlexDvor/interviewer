@@ -1,0 +1,20 @@
+<aside class="sidebar" aria-label="Навігація навчання">
+  <a class="brand" routerLink="/" aria-label="Angular Practice — головна"
+    ><span class="brand-icon">A</span
+    ><span>angular<span class="brand-subtitle">practice space</span></span></a
+  >
+  <span class="nav-label">ТВІЙ ПРОСТІР</span>
+  <nav>
+    <a class="nav-active" routerLink="/" aria-current="page"
+      ><span aria-hidden="true">▦</span> Каталог завдань
+      <span class="count">{{ lessonCount() }}</span></a
+    >
+    <a href="#learning-notes"><span aria-hidden="true">↗</span> Як тут навчатися</a>
+  </nav>
+  <div class="sidebar-note">
+    <span class="spark" aria-hidden="true">✳</span>
+    <p>Менше теорії.<br />Більше власного коду.</p>
+    <span>Один компонент за раз.</span>
+  </div>
+  <div class="sidebar-footer"><span class="online-dot"></span> Твоя Angular-майстерня</div>
+</aside>

@@ -1,0 +1,88 @@
+<div class="academy">
+  <a class="skip-link" href="#assignments">До завдань</a>
+  <app-catalog-navigation [lessonCount]="lessons.length" />
+
+  <main class="content">
+    <header class="topbar">
+      <span>Майстерня <span class="breadcrumb">/ Каталог</span></span
+      ><span class="top-label">LEARN BY BUILDING <span aria-hidden="true">↗</span></span>
+    </header>
+
+    <section class="hero" aria-labelledby="catalog-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span></span> ВІД ЗНАНЬ ДО ПРАКТИКИ</p>
+        <h1 id="catalog-title">Твій наступний<br />крок в <span>Angular.</span></h1>
+        <p class="hero-description">
+          Обирай завдання, відкривай макет і оживляй його власним кодом. Тут кожна тема стає
+          маленьким застосунком.
+        </p>
+        <a class="primary-link" href="#assignments"
+          >Обрати завдання <span aria-hidden="true">↓</span></a
+        >
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="art-caption">COMPONENT COMMUNICATION</div>
+        <div class="code-window parent-window">
+          <span class="window-dots">● ● ●</span><span class="code-label">parent.ts</span>
+          <div class="code-line"><i>data</i> = <b>'your idea'</b>;</div>
+        </div>
+        <div class="data-flow"><span>↓</span><code>[input]="data"</code></div>
+        <div class="code-window child-window">
+          <span class="window-dots">● ● ●</span><span class="code-label">child.html</span>
+          <div class="code-line"><i>&lt;your-component</i> /&gt;</div>
+        </div>
+        <span class="art-sticker">Зрозумій. Спробуй. Створи.</span>
+      </div>
+    </section>
+
+    <section id="assignments" aria-labelledby="assignments-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">ПРАКТИЧНА БІБЛІОТЕКА</p>
+          <h2 id="assignments-title">
+            Твої завдання<span class="total">{{ lessons.length }}</span>
+          </h2>
+        </div>
+        <span class="section-hint">Від простого до інтерактивного</span>
+      </div>
+      <div class="lesson-grid">
+        @for (lesson of lessons; track lesson.path) {
+          <app-lesson-card [lesson]="lesson" />
+        }
+      </div>
+    </section>
+
+    <section class="learning-notes" id="learning-notes" aria-labelledby="learning-title">
+      <div>
+        <p class="eyebrow">ТВІЙ РИТМ НАВЧАННЯ</p>
+        <h2 id="learning-title">Макет уже є.<br />Рішення — за тобою.</h2>
+      </div>
+      <ol>
+        <li>
+          <span>01</span>
+          <div>
+            <h3>Обери тему</h3>
+            <p>Відкрий завдання та розбери структуру компонентів.</p>
+          </div>
+        </li>
+        <li>
+          <span>02</span>
+          <div>
+            <h3>Підключи логіку</h3>
+            <p>Реалізуй поведінку самостійно, крок за кроком.</p>
+          </div>
+        </li>
+        <li>
+          <span>03</span>
+          <div>
+            <h3>Принеси на перевірку</h3>
+            <p>Напиши «перевір» у чаті — розберемо результат разом.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+    <footer class="page-footer">
+      <span>ANGULAR PRACTICE</span><span>Маленькі кроки. Працюючі інтерфейси.</span>
+    </footer>
+  </main>
+</div>
